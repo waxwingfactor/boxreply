@@ -1,0 +1,282 @@
+{
+  "accepted_workflow": {
+    "boxes": 3,
+    "original_source_removed": true,
+    "relocated_packet_replayed": true,
+    "required_decisions": 6,
+    "required_reviewers": 3
+  },
+  "artifact": {
+    "build_requires": [],
+    "bytes": 19733,
+    "filename": "boxreply-1.0.0-py3-none-any.whl",
+    "kind": "wheel",
+    "package": "boxreply",
+    "runtime_requires": [
+      "openpyxl==3.1.5",
+      "defusedxml==0.7.1",
+      "et-xmlfile==2.0.0"
+    ],
+    "sha256": "4cc7e3d1bf538e10e29c7400863909b6a8c95dddfa5ad68829c6f69ec811b1e0",
+    "source_contents": null,
+    "version": "1.0.0"
+  },
+  "checks": [
+    {
+      "name": "fresh-venv-excludes-system-site-packages",
+      "passed": true
+    },
+    {
+      "diagnostic": "logs/02-download-runtime-and-build-wheels.txt",
+      "expected_exit": 0,
+      "name": "download-runtime-and-build-wheels",
+      "observed_exit": 0,
+      "passed": true
+    },
+    {
+      "name": "artifact-copy-hash-matches-download",
+      "passed": true
+    },
+    {
+      "diagnostic": "logs/04-install-artifact-no-index.txt",
+      "expected_exit": 0,
+      "name": "install-artifact-no-index",
+      "observed_exit": 0,
+      "passed": true
+    },
+    {
+      "diagnostic": "logs/05-installed-origin-and-provenance.txt",
+      "expected_exit": 0,
+      "name": "installed-origin-and-provenance",
+      "observed_exit": 0,
+      "passed": true
+    },
+    {
+      "name": "installed-version-matches-artifact",
+      "passed": true
+    },
+    {
+      "diagnostic": "logs/07-installed-console-entrypoint.txt",
+      "expected_exit": 0,
+      "name": "installed-console-entrypoint",
+      "observed_exit": 0,
+      "passed": true
+    },
+    {
+      "name": "console-version-matches-artifact",
+      "passed": true
+    },
+    {
+      "diagnostic": "logs/09-offline-prepare.txt",
+      "expected_exit": 0,
+      "name": "offline-prepare",
+      "observed_exit": 0,
+      "passed": true
+    },
+    {
+      "diagnostic": "logs/10-edit-generated-alex.txt",
+      "expected_exit": 0,
+      "name": "edit-generated-alex",
+      "observed_exit": 0,
+      "passed": true
+    },
+    {
+      "diagnostic": "logs/11-edit-generated-casey.txt",
+      "expected_exit": 0,
+      "name": "edit-generated-casey",
+      "observed_exit": 0,
+      "passed": true
+    },
+    {
+      "diagnostic": "logs/12-edit-generated-sam.txt",
+      "expected_exit": 0,
+      "name": "edit-generated-sam",
+      "observed_exit": 0,
+      "passed": true
+    },
+    {
+      "diagnostic": "logs/13-offline-complete-reconciliation.txt",
+      "expected_exit": 0,
+      "name": "offline-complete-reconciliation",
+      "observed_exit": 0,
+      "passed": true
+    },
+    {
+      "name": "six-explicit-decisions-and-preserved-identifiers",
+      "passed": true
+    },
+    {
+      "diagnostic": "logs/15-offline-verify-after-clock-boundary.txt",
+      "expected_exit": 0,
+      "name": "offline-verify-after-clock-boundary",
+      "observed_exit": 0,
+      "passed": true
+    },
+    {
+      "diagnostic": "logs/16-offline-partial-return-exit3.txt",
+      "expected_exit": 3,
+      "name": "offline-partial-return-exit3",
+      "observed_exit": 3,
+      "passed": true
+    },
+    {
+      "name": "partial-never-becomes-no-exception",
+      "passed": true
+    },
+    {
+      "diagnostic": "logs/18-offline-verify-valid-progress-packet.txt",
+      "expected_exit": 0,
+      "name": "offline-verify-valid-progress-packet",
+      "observed_exit": 0,
+      "passed": true
+    },
+    {
+      "diagnostic": "logs/19-edit-exception.txt",
+      "expected_exit": 0,
+      "name": "edit-exception",
+      "observed_exit": 0,
+      "passed": true
+    },
+    {
+      "diagnostic": "logs/20-offline-exception-with-missing-reviewer.txt",
+      "expected_exit": 3,
+      "name": "offline-exception-with-missing-reviewer",
+      "observed_exit": 3,
+      "passed": true
+    },
+    {
+      "name": "exception-and-pending-both-visible",
+      "passed": true
+    },
+    {
+      "diagnostic": "logs/22-edit-correction.txt",
+      "expected_exit": 0,
+      "name": "edit-correction",
+      "observed_exit": 0,
+      "passed": true
+    },
+    {
+      "diagnostic": "logs/23-offline-correction-blocks-readiness.txt",
+      "expected_exit": 3,
+      "name": "offline-correction-blocks-readiness",
+      "observed_exit": 3,
+      "passed": true
+    },
+    {
+      "name": "complete-correction-remains-blocked",
+      "passed": true
+    },
+    {
+      "diagnostic": "logs/25-edit-wrong-source.txt",
+      "expected_exit": 0,
+      "name": "edit-wrong-source",
+      "observed_exit": 0,
+      "passed": true
+    },
+    {
+      "diagnostic": "logs/26-offline-wrong-source-exit2.txt",
+      "expected_exit": 2,
+      "name": "offline-wrong-source-exit2",
+      "observed_exit": 2,
+      "passed": true
+    },
+    {
+      "name": "wrong-source-publishes-no-packet",
+      "passed": true
+    },
+    {
+      "diagnostic": "logs/28-offline-duplicate-return-exit2.txt",
+      "expected_exit": 2,
+      "name": "offline-duplicate-return-exit2",
+      "observed_exit": 2,
+      "passed": true
+    },
+    {
+      "name": "duplicate-publishes-no-packet",
+      "passed": true
+    },
+    {
+      "diagnostic": "logs/30-offline-relocated-source-removed-replay.txt",
+      "expected_exit": 0,
+      "name": "offline-relocated-source-removed-replay",
+      "observed_exit": 0,
+      "passed": true
+    },
+    {
+      "name": "original-round-inputs-and-returns-removed",
+      "passed": true
+    },
+    {
+      "diagnostic": "logs/32-offline-tampered-hash-rejected.txt",
+      "expected_exit": 2,
+      "name": "offline-tampered-hash-rejected",
+      "observed_exit": 2,
+      "passed": true
+    },
+    {
+      "diagnostic": "logs/33-offline-rewritten-receipt-replay-mismatch-rejected.txt",
+      "expected_exit": 2,
+      "name": "offline-rewritten-receipt-replay-mismatch-rejected",
+      "observed_exit": 2,
+      "passed": true
+    },
+    {
+      "name": "all-output-transactions-cleaned",
+      "passed": true
+    }
+  ],
+  "checks_passed": 34,
+  "finished_utc": "2026-10-15T20:39:59.920613+00:00",
+  "harness_sha256": "f165c4becdda9defa33f425793a3d5d57adebb04f268860316d4a9d336dddc15",
+  "host": {
+    "implementation": "CPython",
+    "machine": "arm64",
+    "python": "3.12.14",
+    "system": "Darwin"
+  },
+  "install_network_policy": "Dependencies acquired first; artifact installed with --no-index --find-links and no cache",
+  "installation": {
+    "artifact_filename": "boxreply-1.0.0-py3-none-any.whl",
+    "artifact_sha256": "4cc7e3d1bf538e10e29c7400863909b6a8c95dddfa5ad68829c6f69ec811b1e0",
+    "dependencies": {
+      "boxreply": "1.0.0",
+      "defusedxml": "0.7.1",
+      "et_xmlfile": "2.0.0",
+      "openpyxl": "3.1.5",
+      "pip": "25.0.1"
+    },
+    "editable": false,
+    "isolated_interpreter": true,
+    "module_relative_to_venv": "lib/python3.12/site-packages/boxreply/__init__.py",
+    "outside_checkout": true,
+    "package": "boxreply",
+    "version": "1.0.0"
+  },
+  "product": "BoxReply release acceptance",
+  "runtime_network_policy": "Python sockets and DNS resolution disabled in every application subprocess",
+  "schema": 1,
+  "started_utc": "2026-10-15T20:39:52.150747+00:00",
+  "status": "passed",
+  "wheelhouse": [
+    {
+      "bytes": 19733,
+      "filename": "boxreply-1.0.0-py3-none-any.whl",
+      "sha256": "4cc7e3d1bf538e10e29c7400863909b6a8c95dddfa5ad68829c6f69ec811b1e0"
+    },
+    {
+      "bytes": 25604,
+      "filename": "defusedxml-0.7.1-py2.py3-none-any.whl",
+      "sha256": "a352e7e428770286cc899e2542b6cdaedb2b4953ff269a210103ec58f6198a61"
+    },
+    {
+      "bytes": 18059,
+      "filename": "et_xmlfile-2.0.0-py3-none-any.whl",
+      "sha256": "7a91720bc756843502c3b7504c77b8fe44217c85c537d85037f0f536151b2caa"
+    },
+    {
+      "bytes": 250910,
+      "filename": "openpyxl-3.1.5-py2.py3-none-any.whl",
+      "sha256": "5282c12b107bffeef825f4617dc029afaf41d0ea60823bbb665ef3079dc79de2"
+    }
+  ]
+}
