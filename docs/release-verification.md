@@ -2,7 +2,7 @@
 
 **BoxReply 1.0.0 was publicly released and independently verified on 15 October 2026.** The [release](https://github.com/waxwingfactor/boxreply/releases/tag/v1.0.0) contains the installable wheel, source distribution, SHA-256 checksums, build provenance and the three public-verification reports. The initial four release assets were preserved unchanged after verification.
 
-The immutable release tag resolves to source commit `7d470cdb70273ab60436ac0212ba93c68fef8cb8`, tree `0e29a135898bbeb216ea031ec984b02bd5ae47f3`. The reviewed PR head has the identical tree. [PR #3](https://github.com/waxwingfactor/boxreply/pull/3) records independent AI-agent reviews and their fixes; it was merged through protected main after required CI passed, without bypassing the gate.
+At verification, the annotated release tag resolved to source commit `7d470cdb70273ab60436ac0212ba93c68fef8cb8`, tree `0e29a135898bbeb216ea031ec984b02bd5ae47f3`. The reviewed PR head has the identical tree. [PR #3](https://github.com/waxwingfactor/boxreply/pull/3) records independent AI-agent reviews and their fixes; it was merged through protected main after required CI passed, without bypassing the gate.
 
 ## Actual public artifacts
 
