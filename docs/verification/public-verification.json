@@ -1,0 +1,342 @@
+{
+  "acceptance_method": {
+    "development_artifacts_used": false,
+    "development_verifier_used": false,
+    "environment": "Separate fresh venv per artifact, outside the development checkout, CPython 3.12.14 on macOS arm64",
+    "installation": "Runtime and source-build dependencies downloaded first into recorded wheelhouses; actual downloaded wheel/sdist installed with --no-index --find-links --no-cache-dir; non-editable direct_url SHA256 matched the downloaded input artifact",
+    "isolation": "PYTHONPATH and PYTHONHOME removed; installed probes and application subprocesses invoked with -I; imports resolved inside the new venv",
+    "offline_runtime": "Python socket connect/connect_ex/create_connection and DNS getaddrinfo disabled in every application subprocess",
+    "scenarios": [
+      "Complete prepare/edit/reconcile/verify workflow with three boxes, three reviewers and six explicit decisions",
+      "Byte-exact replay after crossing a wall-clock second boundary",
+      "Partial return exit 3 and incomplete progress packet verification",
+      "Exception and pending reviewer simultaneously visible",
+      "Completed correction response prevents readiness",
+      "Changed source cell and duplicate reviewer submissions rejected with exit 2 and no output packet",
+      "Whole packet relocated, original round/input/return files removed, then successful offline verification",
+      "Changed artifact bytes rejected by receipt hashes",
+      "Changed results with rewritten receipt hashes rejected by evidence replay",
+      "No transaction lock or temporary output left behind"
+    ],
+    "verifier_origin": "Extracted scripts/verify_release.py from the actual anonymously downloaded source distribution; matched its provenance hash and public exact-commit source bytes"
+  },
+  "ci": {
+    "conclusion": "success",
+    "jobs": [
+      {
+        "conclusion": "success",
+        "name": "test (ubuntu-latest, 3.10)"
+      },
+      {
+        "conclusion": "success",
+        "name": "test (windows-latest, 3.10)"
+      },
+      {
+        "conclusion": "success",
+        "name": "test (macos-latest, 3.12)"
+      },
+      {
+        "conclusion": "success",
+        "name": "test (windows-latest, 3.12)"
+      },
+      {
+        "conclusion": "success",
+        "name": "test (macos-latest, 3.14)"
+      },
+      {
+        "conclusion": "success",
+        "name": "test (ubuntu-latest, 3.14)"
+      },
+      {
+        "conclusion": "success",
+        "name": "test (ubuntu-latest, 3.12)"
+      },
+      {
+        "conclusion": "success",
+        "name": "package"
+      },
+      {
+        "conclusion": "success",
+        "name": "test (windows-latest, 3.14)"
+      },
+      {
+        "conclusion": "success",
+        "name": "test (macos-latest, 3.10)"
+      },
+      {
+        "conclusion": "success",
+        "name": "required"
+      }
+    ],
+    "source_commit": "7d470cdb70273ab60436ac0212ba93c68fef8cb8",
+    "status": "completed",
+    "url": "https://github.com/waxwingfactor/boxreply/actions/runs/38803152606"
+  },
+  "download_authentication": {
+    "anonymous": true,
+    "authorization_header_sent": false
+  },
+  "downloads": [
+    {
+      "bytes": 9977,
+      "final_url_host": "api.github.com",
+      "http_status": 200,
+      "requested_url": "https://api.github.com/repos/waxwingfactor/boxreply/releases/tags/v1.0.0",
+      "sha256": "2167c6d9dd8b9b8ba5e222806ee541209266c0becbe5ff332ceb0e8622d6d3a1"
+    },
+    {
+      "bytes": 19733,
+      "final_url_host": "release-assets.githubusercontent.com",
+      "http_status": 200,
+      "requested_url": "https://github.com/waxwingfactor/boxreply/releases/download/v1.0.0/boxreply-1.0.0-py3-none-any.whl",
+      "sha256": "4cc7e3d1bf538e10e29c7400863909b6a8c95dddfa5ad68829c6f69ec811b1e0"
+    },
+    {
+      "bytes": 51371,
+      "final_url_host": "release-assets.githubusercontent.com",
+      "http_status": 200,
+      "requested_url": "https://github.com/waxwingfactor/boxreply/releases/download/v1.0.0/boxreply-1.0.0.tar.gz",
+      "sha256": "fb73df8f214640345e87b751ae617b8b74891b7ef8d8a7203f9f900ddc1a050b"
+    },
+    {
+      "bytes": 3845,
+      "final_url_host": "release-assets.githubusercontent.com",
+      "http_status": 200,
+      "requested_url": "https://github.com/waxwingfactor/boxreply/releases/download/v1.0.0/provenance.json",
+      "sha256": "2159ff1c4886b487e265e59124d62ca322cf553c8a08e786a8227ca6829da4ce"
+    },
+    {
+      "bytes": 268,
+      "final_url_host": "release-assets.githubusercontent.com",
+      "http_status": 200,
+      "requested_url": "https://github.com/waxwingfactor/boxreply/releases/download/v1.0.0/SHA256SUMS",
+      "sha256": "72fe9ef91a8229370fb980aa74ecdf80c06fb9aa5908c1e6669014c01680eda4"
+    },
+    {
+      "bytes": 2623,
+      "final_url_host": "api.github.com",
+      "http_status": 200,
+      "requested_url": "https://api.github.com/repos/waxwingfactor/boxreply/git/commits/7d470cdb70273ab60436ac0212ba93c68fef8cb8",
+      "sha256": "1a7f61e5abe76139f705a9edff4a1bdedf032a0322d2b04c09c90457913e24aa"
+    },
+    {
+      "bytes": 46563,
+      "final_url_host": "codeload.github.com",
+      "http_status": 200,
+      "requested_url": "https://codeload.github.com/waxwingfactor/boxreply/tar.gz/7d470cdb70273ab60436ac0212ba93c68fef8cb8",
+      "sha256": "dc95a6b777f67a00b314201076378ef06f414198c8f30618ed4837cb1f42eda0"
+    },
+    {
+      "bytes": 7219,
+      "final_url_host": "api.github.com",
+      "http_status": 200,
+      "requested_url": "https://api.github.com/repos/waxwingfactor/boxreply/git/trees/0e29a135898bbeb216ea031ec984b02bd5ae47f3?recursive=1",
+      "sha256": "8689008a2b4606bd38994ce4a93248e4d1cd1de7f5240740fa46ba825152f97c"
+    },
+    {
+      "bytes": 12793,
+      "final_url_host": "api.github.com",
+      "http_status": 200,
+      "requested_url": "https://api.github.com/repos/waxwingfactor/boxreply/actions/runs/38803152606",
+      "sha256": "b2ef6da323ff98a0a1dbec0bdab1b5bc0fdaa4c96852a3c7895f737f7cd3e2d0"
+    },
+    {
+      "bytes": 25663,
+      "final_url_host": "api.github.com",
+      "http_status": 200,
+      "requested_url": "https://api.github.com/repos/waxwingfactor/boxreply/actions/runs/38803152606/jobs?per_page=100",
+      "sha256": "3665d74aab63ee97ec583d1cb3dad181baf92bc86167021de8649dede891c535"
+    },
+    {
+      "bytes": 18861,
+      "final_url_host": "api.github.com",
+      "http_status": 200,
+      "requested_url": "https://api.github.com/repos/waxwingfactor/boxreply/pulls/3",
+      "sha256": "70ac29f8e6d6c4247e800f9fbe28911f6f7a3cba47b75f57e44ace6a5726fc64"
+    },
+    {
+      "bytes": 339,
+      "final_url_host": "api.github.com",
+      "http_status": 200,
+      "requested_url": "https://api.github.com/repos/waxwingfactor/boxreply/git/ref/tags/v1.0.0",
+      "sha256": "a05fdc419128abae918f2fe3fa3d66e84a1fcc2e9955df86b220ef171ddbf0ec"
+    },
+    {
+      "bytes": 737,
+      "final_url_host": "api.github.com",
+      "http_status": 200,
+      "requested_url": "https://api.github.com/repos/waxwingfactor/boxreply/git/tags/c5d283ab657aa7c50fe2d827e2756a44b66793be",
+      "sha256": "f3bd5f4c02fe94eba8995fe608a2c44994975bd46c5119d9c324da88e3f4f396"
+    },
+    {
+      "bytes": 9977,
+      "final_url_host": "api.github.com",
+      "http_status": 200,
+      "requested_url": "https://api.github.com/repos/waxwingfactor/boxreply/releases/tags/v1.0.0",
+      "sha256": "2167c6d9dd8b9b8ba5e222806ee541209266c0becbe5ff332ceb0e8622d6d3a1"
+    }
+  ],
+  "implementation_pull_request": {
+    "merge_commit": "7d470cdb70273ab60436ac0212ba93c68fef8cb8",
+    "merged": true,
+    "reviewed_head": "7b969c1a99415f66373e929898d86f2832afedd3",
+    "url": "https://github.com/waxwingfactor/boxreply/pull/3"
+  },
+  "limitations": [
+    "The actual published artifacts were installed and exercised locally on CPython 3.12.14/macOS arm64 only. The linked merged-source CI separately reports success across Python 3.10/3.12/3.14 on Linux/macOS/Windows; those jobs are not represented as local public-artifact installs.",
+    "Dependency acquisition used the network before offline installation and runtime tests. Runtime blocking targets Python sockets and DNS, not an operating-system network namespace.",
+    "Acceptance uses synthetic records and openpyxl workbook edits. This public-download run did not use Microsoft Excel or perform a new native office-application visual inspection.",
+    "Hashes and exact public-source comparisons establish consistency with the observed GitHub release and commit, not cryptographic publisher identity against an account compromise or wholesale replacement.",
+    "No customer adoption, production deployment, measured time savings or legally effective authorization is claimed."
+  ],
+  "original_release_assets_preserved": true,
+  "performed_by": "Independent AI QA agent, separate from the implementation lead; not a human review",
+  "product": "BoxReply",
+  "release": "https://github.com/waxwingfactor/boxreply/releases/tag/v1.0.0",
+  "release_assets": [
+    {
+      "asset_id": 645103801,
+      "filename": "boxreply-1.0.0-py3-none-any.whl",
+      "github_asset_digest": "sha256:4cc7e3d1bf538e10e29c7400863909b6a8c95dddfa5ad68829c6f69ec811b1e0",
+      "sha256": "4cc7e3d1bf538e10e29c7400863909b6a8c95dddfa5ad68829c6f69ec811b1e0",
+      "size": 19733
+    },
+    {
+      "asset_id": 645103797,
+      "filename": "boxreply-1.0.0.tar.gz",
+      "github_asset_digest": "sha256:fb73df8f214640345e87b751ae617b8b74891b7ef8d8a7203f9f900ddc1a050b",
+      "sha256": "fb73df8f214640345e87b751ae617b8b74891b7ef8d8a7203f9f900ddc1a050b",
+      "size": 51371
+    },
+    {
+      "asset_id": 645103800,
+      "filename": "provenance.json",
+      "github_asset_digest": "sha256:2159ff1c4886b487e265e59124d62ca322cf553c8a08e786a8227ca6829da4ce",
+      "sha256": "2159ff1c4886b487e265e59124d62ca322cf553c8a08e786a8227ca6829da4ce",
+      "size": 3845
+    },
+    {
+      "asset_id": 645103795,
+      "filename": "SHA256SUMS",
+      "github_asset_digest": "sha256:72fe9ef91a8229370fb980aa74ecdf80c06fb9aa5908c1e6669014c01680eda4",
+      "sha256": "72fe9ef91a8229370fb980aa74ecdf80c06fb9aa5908c1e6669014c01680eda4",
+      "size": 268
+    }
+  ],
+  "reports": [
+    {
+      "artifact_sha256": "4cc7e3d1bf538e10e29c7400863909b6a8c95dddfa5ad68829c6f69ec811b1e0",
+      "bytes": 7895,
+      "checks_passed": 34,
+      "filename": "public-wheel-verification.json",
+      "finished_utc": "2026-10-15T20:39:59.920613+00:00",
+      "harness_sha256": "f165c4becdda9defa33f425793a3d5d57adebb04f268860316d4a9d336dddc15",
+      "host": {
+        "implementation": "CPython",
+        "machine": "arm64",
+        "python": "3.12.14",
+        "system": "Darwin"
+      },
+      "installed_origin": {
+        "artifact_filename": "boxreply-1.0.0-py3-none-any.whl",
+        "artifact_sha256": "4cc7e3d1bf538e10e29c7400863909b6a8c95dddfa5ad68829c6f69ec811b1e0",
+        "dependencies": {
+          "boxreply": "1.0.0",
+          "defusedxml": "0.7.1",
+          "et_xmlfile": "2.0.0",
+          "openpyxl": "3.1.5",
+          "pip": "25.0.1"
+        },
+        "editable": false,
+        "isolated_interpreter": true,
+        "module_relative_to_venv": "lib/python3.12/site-packages/boxreply/__init__.py",
+        "outside_checkout": true,
+        "package": "boxreply",
+        "version": "1.0.0"
+      },
+      "kind": "wheel",
+      "sha256": "0d60c6b4806da78ea31eca03fd924a5e9a57d63fd6e3b745d4390297c7b70da6",
+      "started_utc": "2026-10-15T20:39:52.150747+00:00",
+      "workflow": {
+        "boxes": 3,
+        "original_source_removed": true,
+        "relocated_packet_replayed": true,
+        "required_decisions": 6,
+        "required_reviewers": 3
+      }
+    },
+    {
+      "artifact_sha256": "fb73df8f214640345e87b751ae617b8b74891b7ef8d8a7203f9f900ddc1a050b",
+      "bytes": 8736,
+      "checks_passed": 34,
+      "filename": "public-sdist-verification.json",
+      "finished_utc": "2026-10-15T20:40:01.808287+00:00",
+      "harness_sha256": "f165c4becdda9defa33f425793a3d5d57adebb04f268860316d4a9d336dddc15",
+      "host": {
+        "implementation": "CPython",
+        "machine": "arm64",
+        "python": "3.12.14",
+        "system": "Darwin"
+      },
+      "installed_origin": {
+        "artifact_filename": "boxreply-1.0.0.tar.gz",
+        "artifact_sha256": "fb73df8f214640345e87b751ae617b8b74891b7ef8d8a7203f9f900ddc1a050b",
+        "dependencies": {
+          "boxreply": "1.0.0",
+          "defusedxml": "0.7.1",
+          "et_xmlfile": "2.0.0",
+          "openpyxl": "3.1.5",
+          "pip": "25.0.1"
+        },
+        "editable": false,
+        "isolated_interpreter": true,
+        "module_relative_to_venv": "lib/python3.12/site-packages/boxreply/__init__.py",
+        "outside_checkout": true,
+        "package": "boxreply",
+        "version": "1.0.0"
+      },
+      "kind": "sdist",
+      "sha256": "7fab67d66a2d42077a2f8dee6c34a673e1fc8f9e1b0373439ff8edf64cf7d313",
+      "started_utc": "2026-10-15T20:39:52.207975+00:00",
+      "workflow": {
+        "boxes": 3,
+        "original_source_removed": true,
+        "relocated_packet_replayed": true,
+        "required_decisions": 6,
+        "required_reviewers": 3
+      }
+    }
+  ],
+  "repository": "https://github.com/waxwingfactor/boxreply",
+  "schema": 1,
+  "source_provenance_checks": {
+    "checksums_match": true,
+    "github_asset_digests_match": true,
+    "provenance_artifact_hashes_match": true,
+    "public_source_commit": "7d470cdb70273ab60436ac0212ba93c68fef8cb8",
+    "public_source_files_matched_provenance_and_git_blob_ids": 23,
+    "public_source_tree": "0e29a135898bbeb216ea031ec984b02bd5ae47f3",
+    "sdist_source_files_matched_exact_public_source": 21,
+    "sdist_source_paths_not_packaged": [
+      ".github/workflows/ci.yml",
+      ".gitignore"
+    ],
+    "shipped_verifier_sha256": "f165c4becdda9defa33f425793a3d5d57adebb04f268860316d4a9d336dddc15",
+    "wheel_python_modules_matched_exact_public_source": [
+      "boxreply/__init__.py",
+      "boxreply/__main__.py",
+      "boxreply/cli.py",
+      "boxreply/core.py",
+      "boxreply/xlsx.py"
+    ]
+  },
+  "status": "passed",
+  "tag": {
+    "annotated_tag_object": "c5d283ab657aa7c50fe2d827e2756a44b66793be",
+    "name": "v1.0.0",
+    "peeled_commit": "7d470cdb70273ab60436ac0212ba93c68fef8cb8"
+  },
+  "total_acceptance_checks_passed": 68,
+  "verified_utc": "2026-10-15T20:41:20.431582+00:00",
+  "version": "1.0.0"
+}
