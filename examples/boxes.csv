@@ -1,0 +1,4 @@
+box_id,department,record_series,description,proposed_action,proposed_date
+0001,Finance,FIN-01,Office supply invoices,destroy,2026-12-31
+0002,Finance,FIN-01,Travel invoices,destroy,2026-12-31
+0003,Planning,PLAN-07,Historic planning drawings,transfer,2026-12-31
