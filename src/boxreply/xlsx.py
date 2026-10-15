@@ -49,12 +49,12 @@ def _base_sheet(ws, headers, widths):
     ws.print_title_rows = "1:1"
 
 
-def _append(ws, values):
-    ws.append(list(values))
-    for cell, value in zip(ws[ws.max_row], values):
+def _append(ws, values, row_number):
+    for column, value in enumerate(values, 1):
+        cell = ws.cell(row_number, column)
         _literal(cell, value)
         cell.font = Font(name="Calibri", size=11)
-    ws.row_dimensions[ws.max_row].height = 48
+    ws.row_dimensions[row_number].height = 48
 
 
 def _save(wb) -> bytes:
@@ -123,11 +123,13 @@ def review_bytes(manifest: dict, reviewer: dict) -> bytes:
     ws.page_setup.fitToHeight = 1
     data = wb.create_sheet("Review")
     _base_sheet(data, RETURN_FIELDS, {"A":18,"B":23,"C":21,"D":58,"E":19,"F":20,"G":25,"H":60})
-    for box in expected_boxes(manifest, reviewer["reviewer_id"]):
-        _append(data, [box[k] for k in BOX_FIELDS] + ["", ""])
-        for cell in data[data.max_row][:6]:
+    for row_number, box in enumerate(expected_boxes(manifest, reviewer["reviewer_id"]), 2):
+        _append(data, [box[k] for k in BOX_FIELDS] + ["", ""], row_number)
+        for column in range(1, 7):
+            cell = data.cell(row_number, column)
             cell.number_format = "@"
-        for cell in data[data.max_row][6:]:
+        for column in (7, 8):
+            cell = data.cell(row_number, column)
             cell.fill = PatternFill("solid", fgColor=BLUE)
             cell.protection = Protection(locked=False)
     data.auto_filter.ref = data.dimensions
@@ -265,16 +267,19 @@ def coordinator_bytes(result: dict) -> bytes:
     ws.column_dimensions["B"].width = 82
     ws.sheet_view.showGridLines = False
     summary = [
-        ("BoxReply coordinator packet", result["round_id"]),
+        ("BoxReply packet", result["round_id"]),
         ("Scope", "Reported exceptions to a frozen, human-supplied box list"),
-        ("All required decisions answered", result["complete"]),
-        ("Ready for coordinator review", result["ready_for_coordinator_review"]),
+        ("All required decisions answered", "Yes" if result["complete"] else "No"),
+        ("Ready for coordinator review", "Yes" if result["ready_for_coordinator_review"] else "No"),
         ("Next step", "Review every exception and correction, obtain ordinary authorization, and check whether the source list is still current."),
         ("Meaning", "No exception reported is a reviewer assertion. It does not authorize destruction or transfer."),
         ("Round fingerprint", result["manifest_sha256"]),
     ] + list(result["counts"].items())
-    for values in summary:
-        _append(ws, values)
+    for row_number, values in enumerate(summary, 1):
+        _append(ws, values, row_number)
+        ws.row_dimensions[row_number].height = 26
+    ws.row_dimensions[5].height = 42
+    ws.row_dimensions[6].height = 42
     ws["A1"].font = Font(size=19, bold=True, color=NAVY)
     ws.row_dimensions[1].height = 35
     ws.freeze_panes = "B3"
@@ -291,12 +296,14 @@ def coordinator_bytes(result: dict) -> bytes:
     dfields = ("reviewer_id", "reviewer_name", "returned", "submitted_by", "submitted_on", "decision", "reason")
     _base_sheet(decisions, ("box_id", *dfields), {"A":18,"B":20,"C":26,"D":14,"E":27,"F":20,"G":25,"H":60})
     colors = {"exception":"FCE4D6", "needs_correction":"FFF2CC", "incomplete":"E7E6E6"}
-    for row in result["rows"]:
-        _append(boxes, [row[k] for k in BOX_FIELDS] + [row["status"], ", ".join(row["pending_reviewers"]), ", ".join(row["correction_reviewers"])])
+    decision_row = 2
+    for row_number, row in enumerate(result["rows"], 2):
+        _append(boxes, [row[k] for k in BOX_FIELDS] + [row["status"], ", ".join(row["pending_reviewers"]), ", ".join(row["correction_reviewers"])], row_number)
         if row["status"] in colors:
-            boxes.cell(boxes.max_row, 7).fill = PatternFill("solid", fgColor=colors[row["status"]])
+            boxes.cell(row_number, 7).fill = PatternFill("solid", fgColor=colors[row["status"]])
         for decision in row["decisions"]:
-            _append(decisions, [row["box_id"]] + [decision[k] for k in dfields])
+            _append(decisions, [row["box_id"]] + [decision[k] for k in dfields], decision_row)
+            decision_row += 1
     boxes.auto_filter.ref = boxes.dimensions
     decisions.auto_filter.ref = decisions.dimensions
     return _save(wb)
